@@ -1,12 +1,12 @@
 import {inventory} from '../constants/inventory.js';
 
-function numberOfSoldTvs() {
-    let soldTvs = 0;
+function numberOfSoldProducts() {
+    let soldProducts = 0;
 
     for (let i = 0; i < inventory.length; i++) {
-        soldTvs += inventory[i].sold;
+        soldProducts += inventory[i].sold;
     }
-    return soldTvs;
+    return soldProducts;
 }
 
-export default numberOfSoldTvs;
+export default numberOfSoldProducts;

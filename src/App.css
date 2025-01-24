@@ -1,0 +1,40 @@
+
+
+.soldProducts {
+    color: green;
+}
+
+.purchasedProducts {
+    color: blue;
+}
+
+.stockProducts {
+    color: red;
+}
+
+/*********************** Best seller styling ***********************/
+
+.bestSellerTile {
+    display: flex;
+    flex-direction: row;
+    border: 3px dashed;
+    border-radius: 10px;
+    background-color: lightgrey;
+    padding: 25px;
+    gap: 40px;
+}
+
+.bestSellerTile span {
+    flex-basis: 300px;
+    margin: 25px;
+}
+
+.bestSellerTile img {
+    width: 100%;
+}
+
+.bestSellerInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
