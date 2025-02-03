@@ -9,9 +9,7 @@ import availableSizes from "./helpers/availableSizes.js";
 
 function App() {
     return (
-        <div >
-            <header>
-            </header>
+        <div>
             <main className="outerContainer">
                 <h1>Tech It Easy Dashboard</h1>
                 <h2>Verkoop overzicht</h2>
@@ -41,9 +39,6 @@ function App() {
                     </div>
                 </article>
             </main>
-            <footer>
-
-            </footer>
         </div>
     )
 }
