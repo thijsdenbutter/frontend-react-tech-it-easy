@@ -22,11 +22,6 @@ body {
 .outerContainer{
     display: flex;
     flex-direction: column;
-}
-
-.innerContainer{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 400px;
-    margin : 35px;
+    padding: 30px;
+    gap: 30px;
 }

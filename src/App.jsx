@@ -9,45 +9,37 @@ import availableSizes from "./helpers/availableSizes.js";
 
 function App() {
     return (
-        <div className="outerContainer">
-            <header className="innerContainer">
-                <h1>Tech It Easy Dashboard</h1>
+        <div >
+            <header>
             </header>
-            <main>
-                <div className="innerContainer">
-                    <h2>Verkoop overzicht</h2>
+            <main className="outerContainer">
+                <h1>Tech It Easy Dashboard</h1>
+                <h2>Verkoop overzicht</h2>
+                <div className="statistics">
                     <article className="statisticsTile soldProducts">
-                        <article>
-                            <h3>Aantal verkochte producten</h3>
-                            <p>{numberOfSoldProducts()}</p>
-                        </article>
+                        <h3>Aantal verkochte producten</h3>
+                        <p>{numberOfSoldProducts()}</p>
                     </article>
                     <article className="statisticsTile purchasedProducts">
-                        <article>
-                            <h3>Aantal ingekochte producten</h3>
-                            <p>{numberOfPurchasedProducts()}</p>
-                        </article>
+                        <h3>Aantal ingekochte producten</h3>
+                        <p>{numberOfPurchasedProducts()}</p>
                     </article>
                     <article className="statisticsTile stockProducts">
-                        <article>
-                            <h3>Aantal te verkopen producten</h3>
-                            <p>{numberOfStockProducts()}</p>
-                        </article>
+                        <h3>Aantal te verkopen producten</h3>
+                        <p>{numberOfStockProducts()}</p>
                     </article>
                 </div>
-                <div className="innerContainer">
-                    <h2>Best verkochte Tv</h2>
-                    <article className="bestSellerTile">
+                <h2>Best verkochte Tv</h2>
+                <article className="bestSellerTile">
                         <span>
                             <img src={bestSellingTv.sourceImg} alt="tv"/>
                         </span>
-                        <div className="bestSellerInformation">
-                            <h3>{productInformation()}</h3>
-                            <p>{formatPrice(bestSellingTv.price)}</p>
-                            <p>{availableSizes(bestSellingTv.availableSizes)}</p>
-                        </div>
-                    </article>
-                </div>
+                    <div className="bestSellerInformation">
+                        <h3>{productInformation()}</h3>
+                        <p>{formatPrice(bestSellingTv.price)}</p>
+                        <p>{availableSizes(bestSellingTv.availableSizes)}</p>
+                    </div>
+                </article>
             </main>
             <footer>
 

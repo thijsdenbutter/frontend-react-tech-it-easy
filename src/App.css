@@ -1,15 +1,44 @@
 
+/*********************** Statistics styling ***********************/
+
+.statistics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.statisticsTile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px;
+    border-radius: 10px;
+    padding: 20px;
+    flex-basis: 250px;
+    height: 200px;
+}
+.statisticsTile h3 {
+    text-align: center;
+}
+
 
 .soldProducts {
-    color: green;
+    background-color: #e6f7f2;
+    border-color: #20c997;
+    color: #136f63;
 }
 
 .purchasedProducts {
-    color: blue;
+    background-color: #e7f0fa;
+    border-color: #4299e1;
+    color: #2b6cb0;
 }
 
 .stockProducts {
-    color: red;
+    background-color: #fde8e8;
+    border-color: #e53e3e;
+    color: #c53030;
 }
 
 /*********************** Best seller styling ***********************/
