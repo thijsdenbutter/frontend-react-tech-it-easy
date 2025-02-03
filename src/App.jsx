@@ -8,6 +8,9 @@ import {bestSellingTv} from "./constants/inventory.js";
 import availableSizes from "./helpers/availableSizes.js";
 
 function App() {
+    function buttonClick(e) {
+        console.log(e.target.innerText)
+    }
     return (
         <div>
             <main className="outerContainer">
@@ -38,6 +41,9 @@ function App() {
                         <p>{availableSizes(bestSellingTv.availableSizes)}</p>
                     </div>
                 </article>
+                <button onClick={(e) => {buttonClick(e)}} >Meest verkocht eerst</button>
+                <button onClick={(e) => {buttonClick(e)}} >Goedkoopste eerst</button>
+                <button onClick={(e) => {buttonClick(e)}} >Meest geschikt voor sport eerst</button>
             </main>
         </div>
     )
