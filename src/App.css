@@ -1,0 +1,104 @@
+
+/*********************** Statistics styling ***********************/
+
+.statistics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.statisticsTile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px;
+    border-radius: 10px;
+    padding: 20px;
+    flex-basis: 250px;
+    height: 200px;
+}
+.statisticsTile h3 {
+    text-align: center;
+}
+
+.soldProducts {
+    background-color: #e6f7f2;
+    border-color: #20c997;
+    color: #136f63;
+}
+
+.purchasedProducts {
+    background-color: #e7f0fa;
+    border-color: #4299e1;
+    color: #2b6cb0;
+}
+
+.stockProducts {
+    background-color: #fde8e8;
+    border-color: #e53e3e;
+    color: #c53030;
+}
+
+.buttons {
+    display: flex;
+    gap: 45px;
+}
+
+.buttons button {
+    padding: 5px;
+}
+
+/*********************** Tile styling ***********************/
+.listTvs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tvTile {
+    display: flex;
+    flex-direction: row;
+    border: 3px dashed;
+    border-radius: 10px;
+    background-color: lightgrey;
+    padding: 25px;
+    gap: 40px;
+}
+
+.tvTile span {
+    flex-basis: 300px;
+    margin: 25px;
+}
+
+.tvImage{
+    width: 100%;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+}
+
+.tvInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tvOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 5px;
+    align-items: center;
+    list-style: none;
+}
+
+.tvOptions li {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
