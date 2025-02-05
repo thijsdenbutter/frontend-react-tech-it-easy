@@ -1,7 +1,5 @@
-import {bestSellingTv} from '../constants/inventory.js';
-
-function productInformation() {
-    return `${bestSellingTv.brand} ${bestSellingTv.type} - ${bestSellingTv.name}`;
+function productInformation(tv) {
+    return `${tv.brand} ${tv.type} - ${tv.name}`;
 }
 
 export default productInformation;

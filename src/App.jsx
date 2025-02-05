@@ -4,8 +4,11 @@ import numberOfPurchasedProducts from "./helpers/numberOfPurchasedProducts.js";
 import numberOfStockProducts from "./helpers/numberOfStockProducts.js";
 import productInformation from "./helpers/productInformation.js";
 import formatPrice from "./helpers/formatPrice.js";
-import {bestSellingTv} from "./constants/inventory.js";
+import {bestSellingTv, inventory} from "./constants/inventory.js";
 import availableSizes from "./helpers/availableSizes.js";
+import check from "./assets/check.png";
+import minus from "./assets/minus.png";
+import {sortMostSold, sortLowestPrice, sortRefreshRate} from "./helpers/sort.js";
 
 function App() {
     function buttonClick(e) {
@@ -31,19 +34,68 @@ function App() {
                     </article>
                 </div>
                 <h2>Best verkochte Tv</h2>
-                <article className="bestSellerTile">
+                <article className="tvTile">
                         <span>
-                            <img src={bestSellingTv.sourceImg} alt="tv"/>
+                            <img src={bestSellingTv.sourceImg} alt="tv" className="tvImage"/>
                         </span>
-                    <div className="bestSellerInformation">
-                        <h3>{productInformation()}</h3>
+                    <div className="tvInformation">
+                        <h3>{productInformation(bestSellingTv)}</h3>
                         <p>{formatPrice(bestSellingTv.price)}</p>
                         <p>{availableSizes(bestSellingTv.availableSizes)}</p>
+                        <ul className="tvOptions">
+                            <li><img src={check} alt="check" className="icon"/>wifi</li>
+                            <li><img src={minus} alt="not check" className="icon"/>speech</li>
+                            <li><img src={check} alt="check" className="icon"/>hdr</li>
+                            <li><img src={check} alt="check" className="icon"/>bluetooth</li>
+                            <li><img src={minus} alt="not check" className="icon"/>ambilight</li>
+                        </ul>
                     </div>
                 </article>
-                <button onClick={(e) => {buttonClick(e)}} >Meest verkocht eerst</button>
-                <button onClick={(e) => {buttonClick(e)}} >Goedkoopste eerst</button>
-                <button onClick={(e) => {buttonClick(e)}} >Meest geschikt voor sport eerst</button>
+                <div className="buttons">
+                    <button onClick={(e) => {
+                        buttonClick(e)
+                        sortMostSold(inventory);
+                    }}>Meest verkocht eerst
+                    </button>
+                    <button onClick={(e) => {
+                        buttonClick(e)
+                        sortLowestPrice(inventory);
+                    }}>Goedkoopste eerst
+                    </button>
+                    <button onClick={(e) => {
+                        buttonClick(e)
+                        sortRefreshRate(inventory);
+                    }}>Meest geschikt voor sport eerst
+                    </button>
+                </div>
+                <ul className="listTvs">
+                    {inventory.map((tv) => {
+                        return <li key={tv.type}>
+                            <article className="tvTile">
+                                 <span>
+                                    <img src={tv.sourceImg} alt="tv" className="tvImage"/>
+                                </span>
+                                <div className="tvInformation">
+                                    <h3>{productInformation(tv)}</h3>
+                                    <p>{formatPrice(tv.price)}</p>
+                                    <p>{availableSizes(tv.availableSizes)}</p>
+                                    <ul className="tvOptions">
+                                        {tv.options.map((option) => {
+                                            switch (option.applicable) {
+                                                case false:
+                                                    return <li key={option.name}><img src={minus} alt="not check" className="icon"/><p>{option.name}</p>
+                                                    </li>
+                                                default:
+                                                    return <li key={option.name}><img src={check} alt="check" className="icon"/><p>{option.name}</p>
+                                                    </li>
+                                            }
+                                        })}
+                                    </ul>
+                                </div>
+                            </article>
+                        </li>
+                    })}
+                </ul>
             </main>
         </div>
     )

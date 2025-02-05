@@ -328,4 +328,39 @@ export let inventory = [
     },
 ];
 
+const tvs = inventory.map((tv) => {
+    return tv.name;
+})
+console.log(tvs);
 
+const soldOutTvs = inventory.filter((tv) => {
+    if (tv.originalStock - tv.sold === 0) return true;
+})
+console.log(soldOutTvs);
+
+const searchedtv = inventory.find((tv) => {
+    if (tv.type === 'NH3216SMART') return true;
+})
+console.log(searchedtv);
+
+const suitableForSports = inventory.map((tv) => {
+    return {name: tv.name, suitable: tv.refreshRate >= 100}
+})
+console.log(suitableForSports);
+
+
+const availableInBigSizes = inventory.filter((tv) => {
+   const bigSizes = tv.availableSizes.filter((size) => {
+      return size >= 65;
+   })
+    return bigSizes.length > 0;
+})
+console.log(availableInBigSizes);
+
+const availableWithAbilight = inventory.filter((tv) => {
+    const option = tv.options.find((option) => {
+        return option.name === 'ambiLight';
+    })
+    return option.applicable;
+})
+console.log(availableWithAbilight);

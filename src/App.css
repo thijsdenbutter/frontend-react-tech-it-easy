@@ -22,7 +22,6 @@
     text-align: center;
 }
 
-
 .soldProducts {
     background-color: #e6f7f2;
     border-color: #20c997;
@@ -41,9 +40,24 @@
     color: #c53030;
 }
 
-/*********************** Best seller styling ***********************/
+.buttons {
+    display: flex;
+    gap: 45px;
+}
 
-.bestSellerTile {
+.buttons button {
+    padding: 5px;
+}
+
+/*********************** Tile styling ***********************/
+.listTvs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tvTile {
     display: flex;
     flex-direction: row;
     border: 3px dashed;
@@ -53,17 +67,38 @@
     gap: 40px;
 }
 
-.bestSellerTile span {
+.tvTile span {
     flex-basis: 300px;
     margin: 25px;
 }
 
-.bestSellerTile img {
+.tvImage{
     width: 100%;
 }
 
-.bestSellerInformation{
+.icon {
+    width: 15px;
+    height: 15px;
+}
+
+.tvInformation{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.tvOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 5px;
+    align-items: center;
+    list-style: none;
+}
+
+.tvOptions li {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
